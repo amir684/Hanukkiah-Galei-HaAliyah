@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1600 1300" font-family="Arial, sans-serif">
+<style>
+ .lbl{fill:#ffffff;stroke:#333;stroke-width:2;rx:10}
+ .t{font-size:24px;font-weight:bold;text-anchor:middle;direction:rtl}
+ .s{font-size:19px;text-anchor:middle;direction:rtl;fill:#333}
+ .ld{stroke:#ffcc00;stroke-width:3;fill:none}
+ .dot{fill:#ffcc00;stroke:#000;stroke-width:1.5}
+ .num{fill:#ffcc00;stroke:#000;stroke-width:2}
+ .nt{font-size:22px;font-weight:bold;text-anchor:middle;fill:#000}
+</style>
+<rect width="1600" height="1300" fill="#1c1f26"/>
+<image xlink:href="front_lit.png" x="300" y="0" width="1000" height="1300"/>
+
+<!-- candle numbers (1 = rightmost) -->
+<g>
+ <circle class="num" cx="1168" cy="196" r="19"/><text class="nt" x="1168" y="204">1</text>
+ <circle class="num" cx="1069" cy="196" r="19"/><text class="nt" x="1069" y="204">2</text>
+ <circle class="num" cx="971"  cy="196" r="19"/><text class="nt" x="971"  y="204">3</text>
+ <circle class="num" cx="873"  cy="196" r="19"/><text class="nt" x="873"  y="204">4</text>
+ <circle class="num" cx="727"  cy="196" r="19"/><text class="nt" x="727"  y="204">5</text>
+ <circle class="num" cx="629"  cy="196" r="19"/><text class="nt" x="629"  y="204">6</text>
+ <circle class="num" cx="531"  cy="196" r="19"/><text class="nt" x="531"  y="204">7</text>
+ <circle class="num" cx="432"  cy="196" r="19"/><text class="nt" x="432"  y="204">8</text>
+</g>
+
+<!-- shamash -->
+<path class="ld" d="M1330 95 H830"/><circle class="dot" cx="826" cy="95" r="7"/>
+<rect class="lbl" x="1330" y="45" width="250" height="100"/>
+<text class="t" x="1455" y="85">נר 9 – השמש</text>
+<text class="s" x="1455" y="115">לד להבה → טרנזיסטור</text>
+
+<!-- candles box -->
+<rect class="lbl" x="15" y="120" width="270" height="170"/>
+<text class="t" x="150" y="160">8 נרות</text>
+<text class="s" x="150" y="192">בכל נר לד להבה אחד</text>
+<text class="s" x="150" y="220">כל לד → טרנזיסטור משלו</text>
+<text class="s" x="150" y="248">נר 1 = הימני (לילה ראשון)</text>
+<text class="s" x="150" y="274">נר 8 = השמאלי</text>
+<path class="ld" d="M285 200 H410"/>
+
+<!-- mast COB -->
+<path class="ld" d="M1330 420 H812"/><circle class="dot" cx="806" cy="420" r="7"/>
+<rect class="lbl" x="1330" y="345" width="250" height="150"/>
+<text class="t" x="1455" y="383">פס לד 2</text>
+<text class="s" x="1455" y="413">COB 5mm, כ-28 לדים</text>
+<text class="s" x="1455" y="441">בתוך העמוד האמצעי</text>
+<text class="s" x="1455" y="469">(מתחת לשמש)</text>
+
+<!-- arms strips -->
+<path class="ld" d="M285 700 H440"/><circle class="dot" cx="446" cy="700" r="7"/>
+<path class="ld" d="M1330 700 H1158"/><circle class="dot" cx="1152" cy="700" r="7"/>
+<rect class="lbl" x="15" y="590" width="270" height="230"/>
+<text class="t" x="150" y="630">פסי לד 1</text>
+<text class="s" x="150" y="662">8 חתיכות 2.7mm</text>
+<text class="s" x="150" y="690">חתיכה אחת בתוך כל</text>
+<text class="s" x="150" y="718">"ענף" מעוקל שמחזיק נר</text>
+<text class="s" x="150" y="746">כ-20 לדים בכל אחת</text>
+<text class="s" x="150" y="774">(הקווים הכחולים)</text>
+<rect class="lbl" x="1330" y="620" width="250" height="160"/>
+<text class="t" x="1455" y="660">אותו דבר</text>
+<text class="s" x="1455" y="692">בכל 8 הענפים</text>
+<text class="s" x="1455" y="720">הפס יושב בחריץ</text>
+<text class="s" x="1455" y="748">מאחורי הענף הלבן</text>
+
+<!-- cavity behind ship -->
+<path class="ld" d="M1330 990 H1005"/><circle class="dot" cx="999" cy="990" r="7"/>
+<rect class="lbl" x="1330" y="905" width="250" height="175"/>
+<text class="t" x="1455" y="945">מאחורי האונייה</text>
+<text class="s" x="1455" y="977">חלל חיווט נסתר:</text>
+<text class="s" x="1455" y="1005">כאן מתחברים כל</text>
+<text class="s" x="1455" y="1033">הפסים והחוטים</text>
+<text class="s" x="1455" y="1061">של הנרות</text>
+
+<!-- base COB -->
+<path class="ld" d="M285 1190 H545"/><circle class="dot" cx="551" cy="1190" r="7"/>
+<rect class="lbl" x="15" y="1085" width="270" height="170"/>
+<text class="t" x="150" y="1125">פס לד 3</text>
+<text class="s" x="150" y="1157">COB 5mm, כ-23 לדים</text>
+<text class="s" x="150" y="1185">מאחורי החלון של הבסיס</text>
+<text class="s" x="150" y="1213">מאיר את "נס גדול היה פה"</text>
+
+<!-- ESP32 in base -->
+<path class="ld" d="M1330 1200 H1180"/><circle class="dot" cx="1174" cy="1200" r="7"/>
+<rect class="lbl" x="1330" y="1120" width="250" height="160"/>
+<text class="t" x="1455" y="1160">בתוך הבסיס</text>
+<text class="s" x="1455" y="1192">ESP32, 9 טרנזיסטורים,</text>
+<text class="s" x="1455" y="1220">חיישן מגע, כפתור,</text>
+<text class="s" x="1455" y="1248">שקע USB-C</text>
+</svg>

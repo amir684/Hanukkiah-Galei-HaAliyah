@@ -1,0 +1,714 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>גלי העלייה · חנוכייה מוארת</title>
+<meta name="description" content="חנוכיית LED בהשראת גלי העלייה לארץ ישראל: שמונה גלים זוהרים יוצאים מספינת מפרש, והתורן שלה הוא השמש.">
+<meta name="theme-color" content="#070b16">
+<meta name="author" content="נועה יהוד">
+<meta property="og:title" content="גלי העלייה · חנוכייה מוארת">
+<meta property="og:description" content="חנוכייה מוארת שתכננה ובנתה נועה יהוד: שמונה גלים זוהרים, ספינת מפרש, ותורן שהוא השמש.">
+<meta property="og:image" content="img/three_quarter.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 3c-5 6-5 10 0 13 5-3 5-7 0-13z' fill='%23ffb347'/%3E%3Crect x='14' y='16' width='4' height='13' rx='1' fill='%23e8e4d8'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700;900&family=Heebo:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --night:#070b16; --night2:#0c1426; --ink:#eae6da; --mut:#9aa6bb; --line:rgba(255,255,255,.09);
+  --gold:#ffb347; --gold2:#ffd88a; --sea:#3aa8ff; --sea2:#9fd8ff; --glass:rgba(16,24,44,.55);
+  --r:20px;
+}
+*{box-sizing:border-box}
+html,body{overflow-x:clip}
+.hero>*{min-width:0}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--night);color:var(--ink);font-family:Heebo,system-ui,sans-serif;font-weight:300;line-height:1.7;overflow-x:hidden}
+a{color:var(--gold2)}
+#sky{position:fixed;inset:0;z-index:-2;display:block}
+.glowbg{position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:radial-gradient(60% 45% at 50% 30%,rgba(255,170,60,.10),transparent 70%),
+             radial-gradient(80% 50% at 50% 110%,rgba(40,120,255,.18),transparent 70%)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+
+/* ---------- nav ---------- */
+nav{position:fixed;top:0;inset-inline:0;z-index:20;transition:background .4s,backdrop-filter .4s}
+nav.solid{background:rgba(7,11,22,.72);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:62px}
+.logo{font-family:'Frank Ruhl Libre',serif;font-weight:900;font-size:22px;color:var(--gold2);text-decoration:none;letter-spacing:.5px}
+.logo span{color:var(--mut);font-weight:500;font-size:14px;margin-inline-start:8px}
+nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0}
+nav ul a{color:var(--ink);text-decoration:none;font-size:15px;opacity:.8;transition:opacity .2s}
+nav ul a:hover{opacity:1;color:var(--gold2)}
+@media (max-width:720px){nav ul{display:none}}
+
+/* ---------- hero ---------- */
+.hero{min-height:100vh;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:20px;padding-top:70px;position:relative}
+.hero h1{font-family:'Frank Ruhl Libre',serif;font-weight:900;font-size:clamp(54px,8vw,104px);line-height:1;margin:0 0 14px;
+  background:linear-gradient(100deg,#fff1cf 0%,var(--gold) 35%,#fff6e0 50%,var(--gold) 65%,#c97a1c 100%);background-size:250% 100%;
+  -webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 7s linear infinite}
+@keyframes shine{to{background-position:-250% 0}}
+.kicker{display:inline-flex;align-items:center;gap:10px;font-size:14px;letter-spacing:2px;color:var(--sea2);margin-bottom:18px;font-weight:500}
+.kicker::before{content:"";width:34px;height:1px;background:var(--sea2)}
+.lead{font-size:clamp(18px,2vw,21px);color:#cfd6e4;max-width:520px;margin:0 0 26px}
+.verse{font-family:'Frank Ruhl Libre',serif;font-size:22px;color:var(--gold2);margin:0 0 30px;opacity:.9}
+.verse small{font-family:Heebo;font-size:13px;color:var(--mut);margin-inline-start:8px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{appearance:none;border:0;cursor:pointer;font:500 16px Heebo,sans-serif;padding:14px 26px;border-radius:999px;text-decoration:none;display:inline-flex;align-items:center;gap:10px;transition:transform .2s,box-shadow .3s,background .3s}
+.btn:active{transform:scale(.97)}
+.btn-gold{background:linear-gradient(135deg,var(--gold2),var(--gold) 55%,#e08a1e);color:#2b1700;box-shadow:0 8px 30px rgba(255,160,50,.35)}
+.btn-gold:hover{box-shadow:0 10px 44px rgba(255,170,60,.6);transform:translateY(-2px)}
+.btn-ghost{background:rgba(255,255,255,.06);color:var(--ink);border:1px solid var(--line)}
+.btn-ghost:hover{background:rgba(255,255,255,.12)}
+.btn:disabled{opacity:.4;cursor:not-allowed;transform:none;box-shadow:none}
+.tonight{margin-top:30px;display:inline-flex;align-items:center;gap:14px;padding:12px 18px;border-radius:16px;background:var(--glass);border:1px solid var(--line);backdrop-filter:blur(10px)}
+.tonight b{font-family:'Frank Ruhl Libre',serif;font-size:26px;color:var(--gold2);font-weight:700}
+.tonight .lbl{font-size:13px;color:var(--mut);line-height:1.3}
+.cd{display:flex;gap:10px;direction:rtl}
+.cd div{text-align:center;min-width:44px}
+.cd b{display:block;font-size:24px;line-height:1.1}
+.cd span{font-size:11px;color:var(--mut)}
+
+.stage{position:relative;display:flex;flex-direction:column;align-items:center}
+#menorah{width:min(100%,520px);height:auto;filter:drop-shadow(0 30px 60px rgba(0,0,0,.6));overflow:visible}
+.nightpick{display:flex;gap:6px;margin-top:8px;direction:rtl}
+.nightpick button{width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:rgba(255,255,255,.04);color:var(--ink);cursor:pointer;font:500 14px Heebo;transition:all .2s}
+.nightpick button:hover{border-color:var(--gold)}
+.nightpick button.on{background:var(--gold);color:#2b1700;border-color:var(--gold);box-shadow:0 0 18px rgba(255,170,60,.6)}
+.picklbl{font-size:12px;color:var(--mut);margin-top:6px}
+.scrollhint{position:absolute;bottom:22px;inset-inline:0;margin:auto;width:24px;height:38px;border:2px solid rgba(255,255,255,.3);border-radius:14px}
+.scrollhint::after{content:"";position:absolute;top:7px;left:50%;width:4px;height:8px;margin-left:-2px;border-radius:2px;background:var(--gold2);animation:sh 1.8s infinite}
+@keyframes sh{0%{opacity:0;transform:translateY(0)}40%{opacity:1}100%{opacity:0;transform:translateY(12px)}}
+@media (max-width:900px){
+  .hero{grid-template-columns:1fr;text-align:center;padding-top:90px;gap:0}
+  .lead{margin-inline:auto}.btns{justify-content:center}.kicker{justify-content:center}
+  .stage{order:-1}#menorah{width:min(86vw,420px)}.scrollhint{display:none}
+}
+
+/* ---------- sea divider ---------- */
+.sea{position:relative;height:120px;margin-top:-60px;overflow:hidden;pointer-events:none}
+.sea svg{position:absolute;bottom:0;width:200%;height:100%;left:0}
+.sea .w1{animation:drift 18s linear infinite;opacity:.35}
+.sea .w2{animation:drift 11s linear infinite reverse;opacity:.55}
+.sea .w3{animation:drift 7s linear infinite;opacity:1}
+@keyframes drift{to{transform:translateX(-50%)}}
+
+/* ---------- sections ---------- */
+section{padding:110px 0;position:relative}
+.sec-tag{font-size:13px;letter-spacing:3px;color:var(--sea2);font-weight:500;margin-bottom:8px}
+h2{font-family:'Frank Ruhl Libre',serif;font-weight:700;font-size:clamp(34px,4.6vw,54px);line-height:1.15;margin:0 0 18px}
+h2 em{font-style:normal;color:var(--gold)}
+.sec-lead{font-size:19px;color:#c9d1df;max-width:680px;margin:0 0 50px}
+.reveal{opacity:0;transform:translateY(40px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.d1{transition-delay:.12s}.d2{transition-delay:.24s}.d3{transition-delay:.36s}
+
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+@media (max-width:860px){.cards{grid-template-columns:1fr}}
+.card{background:linear-gradient(160deg,rgba(255,255,255,.07),rgba(255,255,255,.02));border:1px solid var(--line);border-radius:var(--r);padding:30px;position:relative;overflow:hidden;transition:transform .4s,border-color .4s}
+.card::before{content:"";position:absolute;inset:-1px;border-radius:inherit;padding:1px;background:linear-gradient(140deg,rgba(255,180,70,.6),transparent 40%,transparent 60%,rgba(60,160,255,.5));
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity .4s}
+.card:hover{transform:translateY(-6px)}.card:hover::before{opacity:1}
+.card .ico{width:54px;height:54px;border-radius:16px;display:grid;place-items:center;margin-bottom:18px;background:rgba(255,179,71,.12)}
+.card .ico svg{width:28px;height:28px;stroke:var(--gold2);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.card h3{font-family:'Frank Ruhl Libre',serif;font-size:25px;margin:0 0 8px;font-weight:700}
+.card p{margin:0;color:#c3cbda}
+
+.quote{margin:80px auto 0;max-width:800px;text-align:center;font-family:'Frank Ruhl Libre',serif;font-size:clamp(28px,4vw,46px);line-height:1.35;color:var(--gold2)}
+.quote small{display:block;font-family:Heebo;font-size:15px;color:var(--mut);margin-top:10px}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:10px}
+@media (max-width:760px){.stats{grid-template-columns:repeat(2,1fr)}}
+.stat{text-align:center;padding:30px 10px;border-radius:var(--r);background:rgba(255,255,255,.03);border:1px solid var(--line)}
+.stat b{display:block;font-family:'Frank Ruhl Libre',serif;font-size:clamp(40px,5vw,60px);font-weight:900;line-height:1;
+  background:linear-gradient(180deg,#fff3d6,var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat span{color:var(--mut);font-size:15px}
+
+/* halacha */
+.law{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+@media (max-width:860px){.law{grid-template-columns:1fr}}
+.law div{padding:24px 26px;border-inline-start:3px solid var(--gold);background:rgba(255,179,71,.05);border-radius:0 14px 14px 0}
+.law h4{margin:0 0 6px;font-size:19px;font-weight:500;color:var(--gold2)}
+.law p{margin:0;color:#c3cbda}
+
+/* gallery */
+.gallery{display:grid;grid-template-columns:1.2fr 1fr 1fr;grid-auto-rows:260px;gap:16px}
+.gallery figure{margin:0;border-radius:var(--r);overflow:hidden;position:relative;background:#1b1d21;border:1px solid var(--line);cursor:zoom-in}
+.gallery figure:first-child{grid-row:span 2}
+.gallery img{width:100%;height:100%;object-fit:contain;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.gallery figure:hover img{transform:scale(1.05)}
+.gallery figcaption{position:absolute;bottom:0;inset-inline:0;padding:30px 16px 12px;background:linear-gradient(transparent,rgba(0,0,0,.85));font-size:14px}
+@media (max-width:760px){.gallery{grid-template-columns:1fr 1fr;grid-auto-rows:180px}.gallery figure:first-child{grid-column:span 2;grid-row:span 2}}
+.lightbox{position:fixed;inset:0;z-index:50;background:rgba(3,6,12,.92);display:none;place-items:center;padding:30px;cursor:zoom-out}
+.lightbox.on{display:grid;animation:fade .3s}
+.lightbox img{max-width:100%;max-height:90vh;border-radius:12px}
+@keyframes fade{from{opacity:0}}
+
+/* build */
+.build .card a{display:inline-block;margin-top:14px;font-size:15px;text-decoration:none}
+.build .card a:hover{text-decoration:underline}
+.build ul{margin:10px 0 0;padding-inline-start:18px;color:#c3cbda;font-size:15px}
+
+/* ---------- control ---------- */
+#control{background:linear-gradient(180deg,transparent,rgba(20,40,80,.25) 30%,transparent)}
+.panel{max-width:760px;margin:0 auto;background:var(--glass);backdrop-filter:blur(18px);border:1px solid var(--line);border-radius:28px;padding:30px;box-shadow:0 40px 80px rgba(0,0,0,.4)}
+.conn{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;padding-bottom:22px;border-bottom:1px solid var(--line);margin-bottom:24px}
+.dot{width:12px;height:12px;border-radius:50%;background:#5b6577;display:inline-block;margin-inline-end:10px;vertical-align:middle}
+.dot.ok{background:#3ee08f;box-shadow:0 0 14px #3ee08f}
+.dot.wait{background:var(--gold);animation:pulse 1s infinite}
+@keyframes pulse{50%{opacity:.3}}
+#connText{font-weight:500}
+.note{font-size:14px;color:var(--mut)}
+.grp{margin-bottom:24px}
+.grp>label{display:block;font-size:14px;color:var(--mut);margin-bottom:10px;font-weight:500}
+.seg{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.seg button,.nights button{background:rgba(255,255,255,.05);color:var(--ink);border:1px solid var(--line);border-radius:12px;padding:12px 4px;font:500 15px Heebo;cursor:pointer;transition:all .2s}
+.seg button:hover,.nights button:hover{border-color:rgba(255,179,71,.5)}
+.seg button.on,.nights button.on{background:var(--sea);border-color:var(--sea);color:#04121f;box-shadow:0 0 20px rgba(58,168,255,.45)}
+.nights{display:grid;grid-template-columns:repeat(8,1fr);gap:6px}
+.nights button{padding:12px 0}
+#lightBtn{width:100%;justify-content:center;font-size:21px;padding:18px;margin-bottom:26px}
+input[type=range]{width:100%;accent-color:var(--gold);height:30px}
+.themes{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.themes button{border:2px solid transparent;border-radius:14px;padding:0;height:54px;cursor:pointer;position:relative;overflow:hidden;color:#fff;font:500 13px Heebo;text-shadow:0 1px 3px #000;transition:transform .2s}
+.themes button:hover{transform:translateY(-2px)}
+.themes button.on{border-color:#fff;box-shadow:0 0 18px rgba(255,255,255,.35)}
+.field{width:100%;padding:13px 14px;border-radius:12px;border:1px solid var(--line);background:rgba(0,0,0,.3);color:var(--ink);font:400 16px Heebo;margin-bottom:10px}
+.field:focus{outline:none;border-color:var(--gold)}
+.pinrow{display:flex;gap:10px}.pinrow .field{margin:0;flex:1;letter-spacing:6px;text-align:center;font-size:20px}
+.statusgrid{display:grid;grid-template-columns:auto 1fr;gap:6px 18px;font-size:15px}
+.statusgrid span:nth-child(odd){color:var(--mut)}
+details{border-top:1px solid var(--line);padding-top:18px;margin-top:6px}
+summary{cursor:pointer;font-weight:500;color:var(--gold2);list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"＋ ";color:var(--mut)}
+details[open] summary::before{content:"－ "}
+.locked{opacity:.35;pointer-events:none;filter:grayscale(.6);transition:opacity .4s}
+.alt{border-radius:18px;padding:22px;background:rgba(255,179,71,.07);border:1px dashed rgba(255,179,71,.35);margin-bottom:24px}
+.alt h4{margin:0 0 8px;font-size:18px;color:var(--gold2);font-weight:500}
+.alt ol{margin:6px 0 14px;padding-inline-start:20px}
+.toast{position:fixed;bottom:26px;left:50%;transform:translate(-50%,120px);background:#111a2e;border:1px solid var(--line);padding:12px 22px;border-radius:999px;z-index:60;transition:transform .4s cubic-bezier(.2,.8,.2,1);font-size:15px;box-shadow:0 10px 30px rgba(0,0,0,.5)}
+.toast.on{transform:translate(-50%,0)}
+
+.byline{margin:-14px 0 28px;font-size:17px;color:#cfd6e4}
+.byline b{font-weight:700;color:var(--gold2)}
+.maker{display:grid;grid-template-columns:auto 1fr;gap:40px;align-items:center;max-width:900px;margin:0 auto;padding:44px;border-radius:28px;
+  background:linear-gradient(140deg,rgba(255,179,71,.10),rgba(58,168,255,.06));border:1px solid rgba(255,179,71,.25)}
+.maker .mono{width:150px;height:150px;border-radius:50%;display:grid;place-items:center;font-family:'Frank Ruhl Libre',serif;font-size:64px;font-weight:900;color:#2b1700;
+  background:radial-gradient(circle at 35% 30%,#fff1cf,var(--gold) 55%,#c97a1c);box-shadow:0 0 60px rgba(255,170,60,.45)}
+.maker h2{margin-bottom:10px}
+.maker p{margin:0 0 10px;color:#c9d1df;font-size:18px}
+.maker .roles{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.maker .roles span{padding:6px 14px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid var(--line);font-size:14px}
+@media (max-width:760px){.maker{grid-template-columns:1fr;text-align:center;padding:30px}.maker .mono{margin:auto;width:110px;height:110px;font-size:48px}.maker .roles{justify-content:center}}
+footer{padding:70px 0 50px;text-align:center;color:var(--mut);font-size:14px;border-top:1px solid var(--line)}
+footer .big{font-family:'Frank Ruhl Libre',serif;font-size:34px;color:var(--gold2);margin-bottom:8px}
+
+/* ---------- menorah svg ---------- */
+.flame{transform-box:fill-box;transform-origin:50% 100%;animation:flick 2.2s ease-in-out infinite;transition:opacity .6s}
+@keyframes flick{0%,100%{transform:scale(1,1) skewX(0)}20%{transform:scale(.96,1.05) skewX(2deg)}45%{transform:scale(1.03,.95) skewX(-2deg)}70%{transform:scale(.98,1.04) skewX(1deg)}}
+.halo{transition:opacity .8s;animation:breathe 3s ease-in-out infinite}
+@keyframes breathe{50%{transform:scale(1.08)}}
+.halo{transform-box:fill-box;transform-origin:center}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<canvas id="sky"></canvas><div class="glowbg"></div>
+
+<nav id="nav"><div class="wrap">
+  <a class="logo" href="#top">גלי העלייה<span>חנוכייה מוארת</span></a>
+  <ul><li><a href="#story">הסיפור</a></li><li><a href="#build">איך זה בנוי</a></li><li><a href="#gallery">גלריה</a></li><li><a href="#maker">היוצרת</a></li><li><a href="#control">לוח בקרה</a></li></ul>
+</div></nav>
+
+<header id="top" class="wrap hero">
+  <div class="reveal in">
+    <div class="kicker">חנוכייה לתערוכת חנוכיות</div>
+    <h1>גלי העלייה</h1>
+    <p class="lead">שמונה גלים זוהרים יוצאים כמו מניפה מספינת מפרש. כל גל נשבר בקצף, ועל הקצף עומד נר. התורן של הספינה הוא השמש, ומאיר את הדרך הביתה.</p>
+    <p class="verse">״ושבו בנים לגבולם״<small>ירמיהו לא, טז</small></p>
+    <p class="byline">תכננה ובנתה: <b>נועה יהוד</b></p>
+    <div class="btns">
+      <button class="btn btn-gold" id="heroLight">🔥 הדליקו את החנוכייה</button>
+      <a class="btn btn-ghost" href="#story">גלו את הסיפור</a>
+    </div>
+    <div class="tonight" id="tonight"></div>
+  </div>
+  <div class="stage">
+    <svg id="menorah" viewBox="0 0 1000 1260" aria-label="הדמיה של החנוכייה"></svg>
+    <div class="nightpick" id="nightpick"></div>
+    <div class="picklbl">בחרו לילה כדי לראות את טקס ההדלקה</div>
+  </div>
+  <div class="scrollhint"></div>
+</header>
+
+<div class="sea" aria-hidden="true">
+  <svg viewBox="0 0 2880 120" preserveAspectRatio="none">
+    <path class="w1" fill="#1b4f9c" d="M0 60 Q180 20 360 60 T720 60 T1080 60 T1440 60 T1800 60 T2160 60 T2520 60 T2880 60 V120 H0Z"/>
+    <path class="w2" fill="#123a78" d="M0 80 Q120 50 240 80 T480 80 T720 80 T960 80 T1200 80 T1440 80 T1680 80 T1920 80 T2160 80 T2400 80 T2640 80 T2880 80 V120 H0Z"/>
+    <path class="w3" fill="#0a1a35" d="M0 95 Q240 75 480 95 T960 95 T1440 95 T1920 95 T2400 95 T2880 95 V120 H0Z"/>
+  </svg>
+</div>
+
+<section id="story"><div class="wrap">
+  <div class="sec-tag reveal">הסיפור</div>
+  <h2 class="reveal d1">כל גל הוא <em>גל עלייה</em></h2>
+  <p class="sec-lead reveal d2">גלי העלייה הביאו יהודים מכל קצוות העולם הביתה, לארץ ישראל. החנוכייה מספרת את זה באור: האור יוצא מהספינה, מטפס בגלים ומדליק את הנרות, אחד אחרי השני.</p>
+  <div class="cards">
+    <div class="card reveal">
+      <div class="ico"><svg viewBox="0 0 24 24"><path d="M3 17h18l-2 4H5z"/><path d="M12 3v14"/><path d="M12 4c-4 3-6 7-6 11h6"/><path d="M12 6c3 2 5 5 5 9h-5"/></svg></div>
+      <h3>הספינה</h3><p>ספינת מפרש היא הלב של החנוכייה. על הדופן שלה חרוט ״ושבו בנים לגבולם״, ומכאן יוצאים כל הגלים.</p>
+    </div>
+    <div class="card reveal d1">
+      <div class="ico"><svg viewBox="0 0 24 24"><path d="M2 12c2-3 4-3 6 0s4 3 6 0 4-3 6 0"/><path d="M2 17c2-3 4-3 6 0s4 3 6 0 4-3 6 0"/><path d="M2 7c2-3 4-3 6 0s4 3 6 0 4-3 6 0"/></svg></div>
+      <h3>שמונה גלים</h3><p>כל זרוע היא גל שנשבר בקצף. בתוך כל גל עובר פס לדים, והאור מטפס בו מהספינה ועד הנר.</p>
+    </div>
+    <div class="card reveal d2">
+      <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 2c-3 4-3 7 0 9 3-2 3-5 0-9z"/><path d="M10 11h4v11h-4z"/></svg></div>
+      <h3>התורן הוא השמש</h3><p>התורן של הספינה עולה מעל כל הגלים, ובראשו נר השמש, שממנו נדלקים כל שאר הנרות.</p>
+    </div>
+  </div>
+  <p class="quote reveal">״נס גדול היה פה״<small>כתוב על החלון המואר בבסיס החנוכייה</small></p>
+</div></section>
+
+<section><div class="wrap">
+  <div class="stats">
+    <div class="stat reveal"><b data-count="236">0</b><span>נורות LED בגלים, בתורן ובבסיס</span></div>
+    <div class="stat reveal d1"><b data-count="9">0</b><span>להבות מרצדות: 8 נרות ושמש</span></div>
+    <div class="stat reveal d2"><b data-count="335">0</b><span>מ״מ גובה עד להבת השמש</span></div>
+    <div class="stat reveal d3"><b data-count="234">0</b><span>מ״מ רוחב</span></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="sec-tag reveal">כהלכה</div>
+  <h2 class="reveal d1">מעוצבת, <em>וכשרה</em></h2>
+  <p class="sec-lead reveal d2">העיצוב חופשי, אבל ההלכה לא. החנוכייה יודעת בעצמה איזה לילה של חנוכה הערב, לפי לוח שנה עברי מובנה, ומדליקה בדיוק את מספר הנרות הנכון.</p>
+  <div class="law">
+    <div class="reveal"><h4>שורה אחת ישרה</h4><p>שמונת הנרות עומדים באותו גובה, בשורה אחת, כך שלא נראים כמו מדורה.</p></div>
+    <div class="reveal d1"><h4>שמש גבוה ונפרד</h4><p>נר השמש בראש התורן, גבוה מכל השאר ומובחן מהם.</p></div>
+    <div class="reveal d2"><h4>סדר ההדלקה</h4><p>נר ראשון בצד ימין. בכל ערב מוסיפים נר משמאל, ומדליקים קודם את החדש.</p></div>
+  </div>
+</div></section>
+
+<section id="build" class="build"><div class="wrap">
+  <div class="sec-tag reveal">איך זה בנוי</div>
+  <h2 class="reveal d1">מהדפסה תלת־ממדית <em>ועד הקוד</em></h2>
+  <p class="sec-lead reveal d2">כל החלקים תוכננו מאפס: מודל פרמטרי להדפסה, מעגל חשמלי פשוט וקושחה שכתובה במיוחד לחנוכייה. הכל פתוח וזמין במאגר.</p>
+  <div class="cards">
+    <div class="card reveal">
+      <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 2l9 5v10l-9 5-9-5V7z"/><path d="M12 22V12"/><path d="M21 7l-9 5-9-5"/></svg></div>
+      <h3>מודל להדפסה</h3>
+      <ul><li>OpenSCAD פרמטרי, כל החלקים בקובץ אחד</li><li>מניפת הגלים מודפסת כחלק אחד, בלי תמיכות</li><li>PLA לבן מפזר את האור, PLA כהה לספינה ולבסיס</li></ul>
+      <a href="https://github.com/amir684/Hanukkiah-Galei-HaAliyah/tree/main/model">לקבצי המודל ←</a>
+    </div>
+    <div class="card reveal d1">
+      <div class="ico"><svg viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/></svg></div>
+      <h3>אלקטרוניקה</h3>
+      <ul><li>בקר ESP32-S3 עם WiFi ובלוטות'</li><li>9 נורות להבה מרצדות דרך טרנזיסטורים</li><li>פסי WS2812B בגלים, COB בתורן ובבסיס</li></ul>
+      <a href="https://github.com/amir684/Hanukkiah-Galei-HaAliyah/tree/main/electronics">לשרטוט החיווט ←</a>
+    </div>
+    <div class="card reveal d2">
+      <div class="ico"><svg viewBox="0 0 24 24"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg></div>
+      <h3>קושחה</h3>
+      <ul><li>לוח שנה עברי מובנה: יודעת לבד איזה לילה הערב</li><li>טקס הדלקה מונפש, 4 ערכות צבע</li><li>שליטה מהטלפון בבלוטות' או ב־WiFi</li></ul>
+      <a href="https://github.com/amir684/Hanukkiah-Galei-HaAliyah/tree/main/firmware">לקוד המקור ←</a>
+    </div>
+  </div>
+</div></section>
+
+<section id="gallery"><div class="wrap">
+  <div class="sec-tag reveal">גלריה</div>
+  <h2 class="reveal d1">מכל <em>הזוויות</em></h2>
+  <div class="gallery reveal d2">
+    <figure><img src="img/three_quarter.png" alt="מבט אלכסוני" loading="lazy"><figcaption>מבט אלכסוני</figcaption></figure>
+    <figure><img src="img/front_lit.png" alt="חזית, עם קווי האור" loading="lazy"><figcaption>חזית, עם קווי האור</figcaption></figure>
+    <figure><img src="img/back.png" alt="מבט מאחור" loading="lazy"><figcaption>מבט מאחור</figcaption></figure>
+    <figure><img src="img/led_map.png" alt="מפת הלדים" loading="lazy"><figcaption>מפת הלדים</figcaption></figure>
+    <figure><img src="img/wiring.png" alt="שרטוט חיווט" loading="lazy"><figcaption>שרטוט החיווט</figcaption></figure>
+  </div>
+</div></section>
+
+<section id="maker"><div class="wrap">
+  <div class="maker reveal">
+    <div class="mono">נ״י</div>
+    <div>
+      <div class="sec-tag">היוצרת</div>
+      <h2><em>נועה יהוד</em></h2>
+      <p>נועה תכננה ובנתה את ״גלי העלייה״: מהרעיון והסקיצות הראשונות, דרך המודל להדפסה בתלת־ממד, ועד החשמל והקוד שמדליק את הנרות.</p>
+      <div class="roles"><span>רעיון ועיצוב</span><span>תכנון ומידול</span><span>הדפסה והרכבה</span><span>חשמל ותכנות</span></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="control"><div class="wrap">
+  <div class="sec-tag reveal" style="text-align:center">לבעלים בלבד</div>
+  <h2 class="reveal d1" style="text-align:center">לוח <em>בקרה</em></h2>
+  <p class="sec-lead reveal d2" style="text-align:center;margin-inline:auto">התחברו לחנוכייה בבלוטות' ישירות מהדף, בלי להתקין שום אפליקציה.</p>
+
+  <div class="panel reveal">
+    <div class="alt" id="noBle" hidden>
+      <h4>הדפדפן הזה לא תומך בבלוטות' מדף אינטרנט</h4>
+      <p class="note" style="margin:0 0 6px">באייפון אפל חוסמת את זה בכל הדפדפנים. אפשר לשלוט דרך WiFi:</p>
+      <ol>
+        <li>בהגדרות WiFi של הטלפון, התחברו לרשת <b>Hanukkiah</b>.</li>
+        <li>לחצו על הכפתור למטה, ודף השליטה של החנוכייה ייפתח.</li>
+      </ol>
+      <div class="btns">
+        <a class="btn btn-gold" href="http://192.168.4.1/">פתח שליטה דרך WiFi</a>
+        <a class="btn btn-ghost" href="http://hanukkiah.local/">בבית: hanukkiah.local</a>
+      </div>
+      <p class="note" style="margin:12px 0 0">בבית, אם החנוכייה כבר מחוברת לרשת הביתית, הכפתור השני פותח אותה בלי להחליף רשת.</p>
+    </div>
+
+    <div class="conn">
+      <div><span class="dot" id="dot"></span><span id="connText">לא מחובר</span>
+        <div class="note" id="connSub">ודאו שהחנוכייה דולקת ושהבלוטות' בטלפון פועל</div></div>
+      <button class="btn btn-gold" id="connBtn">התחבר בבלוטות'</button>
+    </div>
+
+    <div class="grp" id="pinBox" hidden>
+      <label>קוד PIN של החנוכייה</label>
+      <div class="pinrow"><input class="field" id="pin" type="password" inputmode="numeric" autocomplete="off" maxlength="8" placeholder="••••">
+      <button class="btn btn-gold" id="pinBtn">כניסה</button></div>
+      <p class="note">הקוד נשמר בדפדפן הזה, ולא צריך להקליד אותו שוב.</p>
+    </div>
+
+    <div id="ctrls" class="locked">
+      <button class="btn btn-gold" id="lightBtn">🔥 הדלקה!</button>
+      <div class="grp"><label>מצב</label><div class="seg" id="modes">
+        <button data-mode="auto">אוטומטי</button><button data-mode="manual">ידני</button>
+        <button data-mode="show">כל הנרות</button><button data-mode="demo">הדגמה</button></div></div>
+      <div class="grp"><label>לילה (ימין = נר ראשון)</label><div class="nights" id="nights"></div></div>
+      <div class="grp"><label>בהירות · <span id="briVal"></span></label><input type="range" id="bri" min="10" max="255" value="150"></div>
+      <div class="grp"><label>ערכת צבעים</label><div class="themes" id="themes"></div></div>
+      <div class="grp"><label>סטטוס</label><div class="statusgrid" id="status"></div></div>
+      <details>
+        <summary>חיבור לרשת WiFi ביתית</summary>
+        <p class="note">החנוכייה תתחבר לרשת הבית ותכוון את השעון מהאינטרנט. אחרי זה אפשר לשלוט בה גם מכל טלפון ברשת, כולל אייפון, בכתובת <b>hanukkiah.local</b>. רשת החנוכייה עצמה ממשיכה לפעול.</p>
+        <input class="field" id="ssid" placeholder="שם הרשת" autocomplete="off">
+        <input class="field" id="wpass" type="password" placeholder="סיסמה" autocomplete="off">
+        <div class="btns"><button class="btn btn-gold" id="wifiBtn">שמור והתחבר</button><button class="btn btn-ghost" id="wifiForget">שכח רשת</button></div>
+      </details>
+    </div>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <div class="big">חנוכה שמח!</div>
+  <p>גלי העלייה · חנוכייה מוארת · ה׳תשפ״ז</p>
+  <p>תוכננה ונבנתה על ידי <b style="color:var(--gold2)">נועה יהוד</b> · © כל הזכויות שמורות לנועה יהוד</p>
+  <p><a href="https://github.com/amir684/Hanukkiah-Galei-HaAliyah">הפרויקט המלא ב־GitHub</a></p>
+</div></footer>
+
+<div class="lightbox" id="lb"><img alt=""></div>
+<div class="toast" id="toast"></div>
+
+<script>
+'use strict';
+/* =====================================================================
+   Hebrew calendar (port of firmware/src/hebcal.cpp)
+   ===================================================================== */
+const LIGHT_H = 16, LIGHT_M = 30;
+function elapsedDays(y){const months=Math.floor((235*y-234)/19);const parts=12084+13753*months;let d=months*29+Math.floor(parts/25920);if((3*(d+1))%7<3)d++;return d;}
+function newYearDelay(y){const a=elapsedDays(y-1),b=elapsedDays(y),c=elapsedDays(y+1);if(c-b===356)return 2;if(b-a===382)return 1;return 0;}
+function newYearRD(y){return -1373427+elapsedDays(y)+newYearDelay(y);}
+function firstEve(g){const hy=g+3761,ny=newYearRD(hy),len=newYearRD(hy+1)-ny,hes=(len%10===5)?30:29;return ny+30+hes+24-1-719163;} // days since 1970-01-01
+const dayNum=d=>Math.floor(Date.UTC(d.getFullYear(),d.getMonth(),d.getDate())/864e5);
+function hanukkahNight(now){
+  const after=now.getHours()>LIGHT_H||(now.getHours()===LIGHT_H&&now.getMinutes()>=LIGHT_M);
+  const e=dayNum(now)-(after?0:1),y=now.getFullYear();
+  for(let g=y;g>=y-1;g--){const n=e-firstEve(g)+1;if(n>=1&&n<=8)return n;}
+  return 0;
+}
+function nextEveDate(now){
+  const y=now.getFullYear();let d=firstEve(y);
+  const at=dd=>{const u=new Date(dd*864e5);return new Date(u.getUTCFullYear(),u.getUTCMonth(),u.getUTCDate(),LIGHT_H,LIGHT_M);};
+  if(at(d)<now)d=firstEve(y+1);
+  return at(d);
+}
+
+/* =====================================================================
+   Menorah SVG
+   ===================================================================== */
+const NS='http://www.w3.org/2000/svg';
+const svg=document.getElementById('menorah');
+const el=(tag,attrs,parent)=>{const e=document.createElementNS(NS,tag);for(const k in attrs)e.setAttribute(k,attrs[k]);(parent||svg).appendChild(e);return e;};
+
+// candle tops, left -> right as seen from the front. Candle number: #1 = rightmost.
+const XS=[133,231,329,427,573,671,769,867];
+const candleNo=i=>8-i;
+const PAL=[ // mirrors the firmware palettes: deep, light, lit A, lit B
+  {name:'ים וזהב', deep:'#00124a',light:'#0078c8',litA:'#ff780a',litB:'#ffc85a',chip:'linear-gradient(135deg,#0a3d8f,#0078c8 55%,#ffb347)'},
+  {name:'כחול לבן',deep:'#001e8c',light:'#1450ff',litA:'#78a0ff',litB:'#ffffff',chip:'linear-gradient(135deg,#1450ff,#4f7dff 50%,#fff)'},
+  {name:'זהב חם', deep:'#3c1200',light:'#a04605',litA:'#ff6e00',litB:'#ffd278',chip:'linear-gradient(135deg,#5c2200,#c86a10 55%,#ffd278)'},
+  {name:'קשת',    deep:'#000',light:'#888',litA:'#ff8c14',litB:'#ffdc8c',chip:'linear-gradient(90deg,#f33,#fb3,#3d6,#3bf,#a5f)'}
+];
+let theme=0;
+
+const defs=el('defs',{});
+defs.innerHTML=`
+<filter id="glow" filterUnits="userSpaceOnUse" x="-100" y="-100" width="1200" height="1500"><feGaussianBlur stdDeviation="7" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<filter id="soft" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="14"/></filter>
+<radialGradient id="fl" cx="50%" cy="78%" r="70%"><stop offset="0" stop-color="#fffbe8"/><stop offset=".35" stop-color="#ffe07a"/><stop offset=".7" stop-color="#ff9a1f"/><stop offset="1" stop-color="#e2540a"/></radialGradient>
+<radialGradient id="halo"><stop offset="0" stop-color="rgba(255,190,90,.55)"/><stop offset="1" stop-color="rgba(255,150,40,0)"/></radialGradient>
+<linearGradient id="cdl" x1="0" x2="1"><stop offset="0" stop-color="#fffaf0"/><stop offset=".55" stop-color="#e7e2d6"/><stop offset="1" stop-color="#8f8b83"/></linearGradient>
+<linearGradient id="hullg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a313d"/><stop offset="1" stop-color="#141820"/></linearGradient>
+<linearGradient id="baseg" x1="0" x2="1"><stop offset="0" stop-color="#2d333e"/><stop offset=".5" stop-color="#1d222b"/><stop offset="1" stop-color="#0e1116"/></linearGradient>
+<linearGradient id="sailg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2b3340"/><stop offset="1" stop-color="#171b23"/></linearGradient>`;
+
+function armPath(tx){
+  const sx=500+(tx-500)*0.36, out=(tx-500)*0.10;
+  return `M${sx} 935 C${sx} 780 ${tx+out} 640 ${tx} 452`;
+}
+const arms=[], flames=[], halos=[];
+const gArms=el('g',{});
+XS.forEach((tx,i)=>{
+  const d=armPath(tx);
+  el('path',{d,stroke:'#c9c5bb','stroke-width':36,fill:'none','stroke-linecap':'round',opacity:.92},gArms);
+  const base=el('path',{d,stroke:'#0078c8','stroke-width':11,fill:'none','stroke-linecap':'round',opacity:.85},gArms);
+  const glow=el('path',{d,stroke:'#ffb347','stroke-width':13,fill:'none','stroke-linecap':'round',pathLength:1,'stroke-dasharray':'1 1','stroke-dashoffset':1,filter:'url(#glow)'},gArms);
+  arms.push({base,glow,p:0});
+});
+// mast (shamash column)
+el('rect',{x:476,y:250,width:48,height:690,rx:8,fill:'#d6d2c8'});
+const mastBase=el('line',{x1:500,y1:928,x2:500,y2:285,stroke:'#0078c8','stroke-width':12,'stroke-linecap':'round',opacity:.85});
+const mastGlow=el('line',{x1:500,y1:928,x2:500,y2:285,stroke:'#ffb347','stroke-width':14,'stroke-linecap':'round',pathLength:1,'stroke-dasharray':'1 1','stroke-dashoffset':1,filter:'url(#glow)'});
+// sails
+el('path',{d:'M490 575 Q350 690 300 890 L490 890Z',fill:'url(#sailg)',stroke:'#3a4352','stroke-width':2});
+el('path',{d:'M510 560 Q640 680 680 868 L510 880Z',fill:'url(#sailg)',stroke:'#3a4352','stroke-width':2});
+for(let k=1;k<5;k++){el('path',{d:`M${490-k*40} ${600+k*62} L490 ${600+k*62}`,stroke:'#3a4352','stroke-width':1.5});el('path',{d:`M510 ${590+k*62} L${515+k*38} ${590+k*62}`,stroke:'#3a4352','stroke-width':1.5});}
+// mast over the sails
+el('rect',{x:476,y:520,width:48,height:420,fill:'#d6d2c8'});
+const mastBase2=el('line',{x1:500,y1:928,x2:500,y2:520,stroke:'#0078c8','stroke-width':12,opacity:.85});
+const mastGlow2=el('line',{x1:500,y1:928,x2:500,y2:285,stroke:'#ffb347','stroke-width':14,pathLength:1,'stroke-dasharray':'1 1','stroke-dashoffset':1,filter:'url(#glow)'});
+// candles, cups, curls
+const curl=(x,dir)=>`M${x} 448 c${dir*-34} 2 ${dir*-46} -30 ${dir*-26} -44 c${dir*14} -9 ${dir*28} 2 ${dir*22} 14`;
+XS.forEach((x,i)=>{
+  const dir=x<500?1:-1;
+  el('path',{d:curl(x-dir*20,dir),stroke:'#c9c5bb','stroke-width':12,fill:'none','stroke-linecap':'round'});
+  el('rect',{x:x-28,y:410,width:56,height:44,rx:10,fill:'#c9c5bb'});
+  el('rect',{x:x-24,y:330,width:48,height:84,rx:3,fill:'url(#cdl)'});
+  el('rect',{x:x-28,y:404,width:56,height:8,rx:2,fill:'#a9a59c'});
+  el('line',{x1:x,y1:330,x2:x,y2:318,stroke:'#3a2a1a','stroke-width':3});
+});
+el('rect',{x:470,y:240,width:60,height:14,rx:3,fill:'#a9a59c'});
+el('rect',{x:476,y:166,width:48,height:80,rx:3,fill:'url(#cdl)'});
+el('line',{x1:500,y1:166,x2:500,y2:154,stroke:'#3a2a1a','stroke-width':3});
+// flames (index 0..7 = left->right, 8 = shamash)
+const FL='M0 0 C-24 -8 -22 -46 0 -98 C5 -72 24 -54 22 -26 C20 -8 11 0 0 0Z';
+[...XS,500].forEach((x,i)=>{
+  const y=i===8?168:332;
+  const h=el('circle',{cx:x,cy:y-40,r:80,fill:'url(#halo)',class:'halo',opacity:0});
+  const g=el('g',{transform:`translate(${x} ${y})`});
+  const f=el('path',{d:FL,fill:'url(#fl)',class:'flame',opacity:0,style:`animation-delay:${-(i*0.37)}s;animation-duration:${1.8+((i*7)%5)*0.17}s`},g);
+  el('path',{d:'M0 -4 C-8 -8 -8 -26 0 -42 C6 -26 8 -10 0 -4Z',fill:'#fffdf2',opacity:.9,class:'flame',style:`animation-delay:${-(i*0.37)}s`},g).dataset.core=i;
+  flames.push(f);halos.push(h);
+});
+const cores=[...svg.querySelectorAll('[data-core]')];
+// hull
+el('path',{d:'M228 918 L752 934 L742 1004 Q722 1052 690 1072 L326 1076 Q292 1050 282 996Z',fill:'url(#hullg)',stroke:'#3a4352','stroke-width':2});
+el('rect',{x:580,y:902,width:96,height:34,rx:3,fill:'#232a35',stroke:'#3a4352','stroke-width':2});
+for(let k=0;k<7;k++)el('circle',{cx:330+k*58,cy:958,r:7,fill:'none',stroke:'#59647a','stroke-width':2});
+el('path',{d:'M262 942 L748 956',stroke:'#3a4352','stroke-width':2});
+const hullTxt=el('text',{x:505,y:1028,'text-anchor':'middle','font-family':'Frank Ruhl Libre, serif','font-size':40,'font-weight':700,fill:'#8b7a5a',direction:'rtl'});
+hullTxt.textContent='ושבו בנים לגבולם';
+// base + window
+el('rect',{x:46,y:1080,width:908,height:176,rx:20,fill:'url(#baseg)'});
+const win=el('path',{d:'M240 1150 Q305 1124 370 1146 T500 1146 T630 1146 T760 1140 V1236 H240Z',fill:'#0a2a55',stroke:'#c9c5bb','stroke-width':3});
+const winGlow=el('path',{d:'M240 1150 Q305 1124 370 1146 T500 1146 T630 1146 T760 1140 V1236 H240Z',fill:'#5ab4ff',opacity:0,filter:'url(#soft)'});
+const winTxt=el('text',{x:500,y:1214,'text-anchor':'middle','font-family':'Frank Ruhl Libre, serif','font-size':58,'font-weight':900,fill:'#d8e4f0',direction:'rtl'});
+winTxt.textContent='נס גדול היה פה';
+
+/* ---------- scene state + render ---------- */
+// lit = set of candle numbers (1 = rightmost) currently burning
+const S={lit:new Set(),shamash:false,climbArm:-1,climb:0,mast:-1,arrival:-1};
+const upTo=n=>new Set(Array.from({length:n},(_,i)=>i+1));
+const hsl=(h,l)=>`hsl(${h},90%,${l}%)`;
+function render(t){
+  const p=PAL[theme],rainbow=theme===3;
+  arms.forEach((a,i)=>{
+    const n=candleNo(i),isLit=S.lit.has(n);
+    const prog=isLit?1:(S.climbArm===n?S.climb:0);
+    a.base.setAttribute('stroke',rainbow?hsl((i*45+t*30)%360,55):p.light);
+    a.base.setAttribute('opacity',(0.45+0.35*(0.5+0.5*Math.sin(t*1.3+i*0.8))).toFixed(2));
+    a.glow.setAttribute('stroke',rainbow?hsl((i*45+t*40)%360,62):(isLit?p.litB:p.litA));
+    a.glow.setAttribute('stroke-dashoffset',(1-prog).toFixed(3));
+    const o=isLit?1:0;flames[i].setAttribute('opacity',o);cores[i].setAttribute('opacity',o*.9);halos[i].setAttribute('opacity',o);
+  });
+  const mp=S.shamash?1:(S.mast>=0?S.mast:0);
+  [mastBase,mastBase2].forEach(m=>m.setAttribute('stroke',rainbow?hsl(t*30%360,55):p.light));
+  [mastGlow,mastGlow2].forEach(m=>{m.setAttribute('stroke',p.litB);m.setAttribute('stroke-dashoffset',(1-mp).toFixed(3));});
+  const so=S.shamash?1:0;flames[8].setAttribute('opacity',so);cores[8].setAttribute('opacity',so*.9);halos[8].setAttribute('opacity',so);
+  // base window: glows when anything is lit, bright sweep while "the ship arrives"
+  let wg=(S.lit.size||S.shamash)?0.55+0.1*Math.sin(t*1.5):0.12;
+  if(S.arrival>=0)wg=Math.max(wg,Math.sin(S.arrival*Math.PI));
+  winGlow.setAttribute('opacity',wg.toFixed(2));
+  winGlow.setAttribute('fill',theme===2?'#ffb45a':theme===1?'#8fb0ff':'#5ab4ff');
+  win.setAttribute('fill',rainbow?'#141a2a':p.deep);
+}
+
+/* ---------- lighting ceremony (same timing as firmware/src/ceremony.h) ---------- */
+const ARRIVAL=1600,MAST=1300,CLIMB=850,GAP=300;
+let cer=null;
+function ceremony(night){cer={night,t0:performance.now()};}
+function stepCeremony(now){
+  if(!cer)return;
+  let t=now-cer.t0;
+  S.arrival=-1;S.mast=-1;S.climbArm=-1;S.climb=0;S.lit=new Set();S.shamash=false;
+  if(t<ARRIVAL){S.arrival=t/ARRIVAL;return;}t-=ARRIVAL;
+  if(t<MAST){S.mast=t/MAST;return;}t-=MAST;S.shamash=true;
+  // newest candle (highest number = leftmost lit) first, then towards the right
+  for(let k=cer.night;k>=1;k--){
+    if(t<CLIMB){S.climbArm=k;S.climb=t/CLIMB;return;}
+    t-=CLIMB;S.lit.add(k);
+    if(t<GAP)return;
+    t-=GAP;
+  }
+  S.lit=upTo(cer.night);cer=null;
+}
+function frame(ts){stepCeremony(ts);render(ts/1000);requestAnimationFrame(frame);}
+requestAnimationFrame(frame);
+
+/* ---------- night picker + tonight ---------- */
+const pick=document.getElementById('nightpick');
+let pickBtns=[];
+for(let n=1;n<=8;n++){const b=document.createElement('button');b.textContent=n;b.onclick=()=>{selectNight(n);};pick.appendChild(b);pickBtns.push(b);}
+function selectNight(n){pickBtns.forEach((b,i)=>b.classList.toggle('on',i+1===n));ceremony(n);}
+document.getElementById('heroLight').onclick=()=>{selectNight(currentNight||8);if(ble.auth)send('light');};
+
+const now=new Date();
+let currentNight=hanukkahNight(now);
+const tn=document.getElementById('tonight');
+function drawTonight(){
+  const d=new Date();const n=hanukkahNight(d);
+  if(n){tn.innerHTML=`<div class="lbl">הערב<br>מדליקים</div><b>נר ${n} של חנוכה</b>`;return;}
+  const eve=nextEveDate(d);let s=Math.max(0,(eve-d)/1000|0);
+  const dd=s/86400|0;s%=86400;const hh=s/3600|0;s%=3600;const mm=s/60|0;const ss=s%60;
+  tn.innerHTML=`<div class="lbl">עד הדלקת<br>נר ראשון</div><div class="cd"><div><b>${dd}</b><span>ימים</span></div><div><b>${hh}</b><span>שעות</span></div><div><b>${mm}</b><span>דקות</span></div><div><b>${ss}</b><span>שניות</span></div></div>`;
+}
+drawTonight();setInterval(drawTonight,1000);
+setTimeout(()=>selectNight(currentNight||8),700);
+
+/* =====================================================================
+   Page effects
+   ===================================================================== */
+// starry sky
+(()=>{const c=document.getElementById('sky'),x=c.getContext('2d');let W,H,st=[];
+ function rs(){W=c.width=innerWidth*devicePixelRatio;H=c.height=innerHeight*devicePixelRatio;st=[];const n=Math.min(260,(innerWidth*innerHeight)/5000|0);
+  for(let i=0;i<n;i++)st.push({x:Math.random()*W,y:Math.random()*H*.85,r:(Math.random()*1.3+.3)*devicePixelRatio,p:Math.random()*6.28,s:.5+Math.random()*1.5});}
+ rs();addEventListener('resize',rs);
+ const g=x.createLinearGradient(0,0,0,1);
+ function d(t){const gr=x.createLinearGradient(0,0,0,H);gr.addColorStop(0,'#050812');gr.addColorStop(.6,'#0a1226');gr.addColorStop(1,'#0c1a36');x.fillStyle=gr;x.fillRect(0,0,W,H);
+  const sc=scrollY*.15*devicePixelRatio;
+  for(const s of st){const a=.35+.65*(.5+.5*Math.sin(t/1000*s.s+s.p));x.globalAlpha=a;x.fillStyle='#fff';x.beginPath();x.arc(s.x,(s.y-sc+H)%H,s.r,0,6.28);x.fill();}
+  x.globalAlpha=1;requestAnimationFrame(d);}
+ requestAnimationFrame(d);})();
+// nav background on scroll
+const nav=document.getElementById('nav');addEventListener('scroll',()=>nav.classList.toggle('solid',scrollY>40),{passive:true});
+// reveal + counters
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;e.target.classList.add('in');
+  e.target.querySelectorAll('[data-count]').forEach(b=>{const to=+b.dataset.count,t0=performance.now();
+    (function tick(t){const k=Math.min(1,(t-t0)/1600),v=Math.round(to*(1-Math.pow(1-k,3)));b.textContent=v;if(k<1)requestAnimationFrame(tick);})(t0);});
+  io.unobserve(e.target);}),{threshold:.15});
+document.querySelectorAll('.reveal').forEach(e=>io.observe(e));
+// lightbox
+const lb=document.getElementById('lb');
+document.querySelectorAll('.gallery figure').forEach(f=>f.onclick=()=>{lb.querySelector('img').src=f.querySelector('img').src;lb.classList.add('on');});
+lb.onclick=()=>lb.classList.remove('on');
+const toast=(m)=>{const t=document.getElementById('toast');t.textContent=m;t.classList.add('on');clearTimeout(toast.h);toast.h=setTimeout(()=>t.classList.remove('on'),3200);};
+
+/* =====================================================================
+   Bluetooth control (Web Bluetooth)
+   Protocol (see firmware/src/ble.cpp):
+     service  8c2b1e00-7d3a-4f6e-9b1c-5a4d3e2f1a00
+     state    ...1e01...  read + notify   JSON (notify = "changed", then read)
+     command  ...1e02...  write           UTF-8 "key=value":
+              pin=1234 | time=<epoch> | mode=auto|manual|show|demo | night=1..8
+              brightness=0..255 | theme=0..3 | light | wifi=<ssid>\t<pass> | wifi=
+   ===================================================================== */
+const SVC='8c2b1e00-7d3a-4f6e-9b1c-5a4d3e2f1a00',CH_STATE='8c2b1e01-7d3a-4f6e-9b1c-5a4d3e2f1a00',CH_CMD='8c2b1e02-7d3a-4f6e-9b1c-5a4d3e2f1a00';
+const ble={dev:null,state:null,cmd:null,auth:false,q:Promise.resolve()};
+const $=id=>document.getElementById(id);
+const enc=new TextEncoder(),dec=new TextDecoder();
+const MODES={auto:'אוטומטי',manual:'ידני',show:'כל הנרות',demo:'הדגמה'};
+
+if(!navigator.bluetooth){$('noBle').hidden=false;$('connBtn').disabled=true;$('connSub').textContent='אין תמיכה בבלוטות\' בדפדפן הזה';}
+
+// build controls
+const nb=$('nights');
+for(let n=1;n<=8;n++){const b=document.createElement('button');b.textContent=n;b.dataset.n=n;b.onclick=()=>send('night='+n);nb.appendChild(b);}
+document.querySelectorAll('#modes button').forEach(b=>b.onclick=()=>send('mode='+b.dataset.mode));
+const th=$('themes');
+PAL.forEach((p,i)=>{const b=document.createElement('button');b.style.background=p.chip;b.textContent=p.name;b.dataset.t=i;b.onclick=()=>{theme=i;markTheme();send('theme='+i);};th.appendChild(b);});
+function markTheme(){th.querySelectorAll('button').forEach(b=>b.classList.toggle('on',+b.dataset.t===theme));}
+markTheme();
+$('bri').oninput=e=>$('briVal').textContent=Math.round(e.target.value/2.55)+'%';
+$('bri').onchange=e=>send('brightness='+e.target.value);
+$('briVal').textContent='59%';
+$('lightBtn').onclick=()=>{send('light');selectNight(ble.last&&ble.last.night||currentNight||8);document.getElementById('top').scrollIntoView({behavior:'smooth'});};
+$('wifiBtn').onclick=()=>{const s=$('ssid').value.trim();if(!s)return toast('הקלידו שם רשת');send('wifi='+s+'\t'+$('wpass').value);toast('נשלח. החנוכייה מתחברת לרשת...');};
+$('wifiForget').onclick=()=>{send('wifi=');toast('הרשת הביתית נמחקה');};
+$('pinBtn').onclick=()=>login($('pin').value);
+$('pin').onkeydown=e=>{if(e.key==='Enter')login($('pin').value);};
+
+function setConn(kind,text,sub){$('dot').className='dot'+(kind?' '+kind:'');$('connText').textContent=text;if(sub!==undefined)$('connSub').textContent=sub;}
+function send(cmd){
+  if(!ble.cmd){if(navigator.bluetooth)toast('קודם צריך להתחבר לחנוכייה');return Promise.resolve();}
+  ble.q=ble.q.then(()=>ble.cmd.writeValueWithResponse(enc.encode(cmd))).then(()=>readState()).catch(e=>{console.warn(e);});
+  return ble.q;
+}
+async function readState(){
+  if(!ble.state)return;
+  const v=await ble.state.readValue();
+  let s;try{s=JSON.parse(dec.decode(v));}catch(e){return;}
+  showState(s);
+}
+function showState(s){
+  ble.last=s;
+  const wasAuth=ble.auth;ble.auth=!!s.auth;
+  $('pinBox').hidden=ble.auth;
+  $('ctrls').classList.toggle('locked',!ble.auth);
+  if(ble.auth&&!wasAuth){setConn('ok','מחובר לחנוכייה',s.sta?('גם ברשת הביתית: '+s.ssid):'');}
+  if(!ble.auth){setConn('wait','מחובר, צריך קוד PIN','');return;}
+  document.querySelectorAll('#modes button').forEach(b=>b.classList.toggle('on',b.dataset.mode===s.mode));
+  nb.querySelectorAll('button').forEach(b=>b.classList.toggle('on',+b.dataset.n===s.night));
+  if(document.activeElement!==$('bri')){$('bri').value=s.brightness;$('briVal').textContent=Math.round(s.brightness/2.55)+'%';}
+  if(theme!==s.theme){theme=s.theme;markTheme();}
+  if(!cer&&s.night){S.lit=upTo(s.night);S.shamash=true;}
+  const rows=[['מצב',MODES[s.mode]||s.mode],['לילה מוצג',s.night||'-'],['שעה בחנוכייה',s.timeValid?s.time:'לא מכוונת'],
+    ['חנוכה עכשיו',s.hanukkahNight?('לילה '+s.hanukkahNight):'לא'],['נר ראשון',s.nextEve||'-'],
+    ['רשת ביתית',s.sta?(s.ssid+' · '+s.ip):'לא מחובר']];
+  $('status').innerHTML=rows.map(r=>`<span>${r[0]}</span><span>${r[1]}</span>`).join('');
+}
+async function login(pin){
+  pin=(pin||'').trim();if(!pin)return;
+  await send('pin='+pin);
+  // the device handles commands in its main loop: poll for up to ~2 s
+  for(let i=0;i<10&&!ble.auth;i++){await new Promise(r=>setTimeout(r,200));await readState().catch(()=>{});}
+  if(ble.auth){localStorage.setItem('hk_pin',pin);toast('ברוך הבא! 🕎');send('time='+Math.floor(Date.now()/1000));}
+  else{localStorage.removeItem('hk_pin');toast('קוד שגוי');$('pin').value='';}
+}
+$('connBtn').onclick=async()=>{
+  if(ble.dev&&ble.dev.gatt.connected){ble.dev.gatt.disconnect();return;}
+  try{
+    setConn('wait','מחפש את החנוכייה...','');
+    const dev=await navigator.bluetooth.requestDevice({filters:[{services:[SVC]},{namePrefix:'Hanukkiah'}],optionalServices:[SVC]});
+    ble.dev=dev;dev.addEventListener('gattserverdisconnected',onDisc);
+    setConn('wait','מתחבר...','');
+    const srv=await (await dev.gatt.connect()).getPrimaryService(SVC);
+    ble.state=await srv.getCharacteristic(CH_STATE);ble.cmd=await srv.getCharacteristic(CH_CMD);
+    await ble.state.startNotifications();ble.state.addEventListener('characteristicvaluechanged',()=>{ble.q=ble.q.then(readState).catch(()=>{});});
+    $('connBtn').textContent='נתק';
+    await readState();
+    const saved=localStorage.getItem('hk_pin');
+    if(!ble.auth&&saved)await login(saved);
+    else if(ble.auth)send('time='+Math.floor(Date.now()/1000));
+  }catch(e){console.warn(e);setConn('','לא מחובר',e.name==='NotFoundError'?'החיפוש בוטל':'החיבור נכשל, נסו שוב');}
+};
+function onDisc(){ble.state=ble.cmd=null;ble.auth=false;$('ctrls').classList.add('locked');$('pinBox').hidden=true;$('connBtn').textContent='התחבר בבלוטות\'';setConn('','לא מחובר','החיבור נותק');}
+if(location.hash==='#control')setTimeout(()=>$('control').scrollIntoView(),300);
+</script>
+</body>

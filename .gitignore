@@ -1,0 +1,12 @@
+# build output
+firmware/.pio/
+firmware/.vscode/c_cpp_properties.json
+firmware/.vscode/launch.json
+# private: WiFi password and PIN
+firmware/include/secrets.h
+# local tooling
+.claude/
+__pycache__/
+*.tmp
+# notes for the AI assistant (local only)
+CLAUDE.md

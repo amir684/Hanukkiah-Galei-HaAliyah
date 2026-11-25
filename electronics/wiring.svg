@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1240 860" font-family="Arial, sans-serif" font-size="13">
+<style>
+ .box{fill:#ffffff;stroke:#333;stroke-width:1.5}
+ .ttl{font-weight:bold;font-size:15px}
+ .sm{font-size:11px;fill:#555}
+ .p5{stroke:#d22;stroke-width:3;fill:none}
+ .p3{stroke:#e98a00;stroke-width:2.5;fill:none}
+ .gnd{stroke:#111;stroke-width:2.5;fill:none}
+ .dat{stroke:#1a7f37;stroke-width:2;fill:none}
+ .sig{stroke:#2463eb;stroke-width:1.8;fill:none}
+ .lbl5{fill:#d22;font-weight:bold}.lbl3{fill:#e98a00;font-weight:bold}.lbld{fill:#1a7f37;font-weight:bold}.lbls{fill:#2463eb;font-weight:bold}
+</style>
+<rect x="0" y="0" width="1240" height="860" fill="#f7f6f2"/>
+<text x="20" y="30" font-size="20" font-weight="bold">Hanukkiah "Galei HaAliyah" - wiring</text>
+<text x="20" y="50" class="sm">red = 5V   orange = 3.3V candle rail   black = GND   green = LED data   blue = signals</text>
+
+<!-- power -->
+<rect class="box" x="20" y="80" width="170" height="70" rx="6"/>
+<text x="30" y="102" class="ttl">USB-C breakout</text>
+<text x="30" y="120" class="sm">power only, 5.1k on CC</text>
+<text x="30" y="136" class="sm">charger 5V / 3A</text>
+<path class="p5" d="M190 100 H1210"/><text x="900" y="94" class="lbl5">5V BUS (22 AWG)</text>
+<path class="gnd" d="M190 130 H230 V820 H1210"/><text x="900" y="814">GND BUS</text>
+
+<rect class="box" x="250" y="160" width="110" height="46" rx="4"/>
+<text x="260" y="180" class="ttl">1000uF 10V</text><text x="260" y="197" class="sm">across 5V-GND</text>
+<path class="p5" d="M305 100 V160"/><path class="gnd" d="M305 206 V226 H230"/>
+
+<!-- AMS1117 -->
+<rect class="box" x="20" y="300" width="170" height="70" rx="6"/>
+<text x="30" y="322" class="ttl">AMS1117-3.3 module</text>
+<text x="30" y="340" class="sm">feeds the 9 flame LEDs only</text>
+<text x="30" y="356" class="sm">IN=5V  OUT=3.3V</text>
+<path class="p5" d="M212 100 V318 H190"/>
+<path class="gnd" d="M190 350 H230"/>
+<path class="p3" d="M100 370 V420 H860"/><text x="560" y="414" class="lbl3">3V3 CANDLE RAIL</text>
+
+<!-- Schottky -->
+<rect class="box" x="400" y="120" width="110" height="40" rx="4"/>
+<text x="410" y="140" class="ttl">1N5819</text><text x="410" y="154" class="sm">diode, band -> ESP</text>
+<path class="p5" d="M455 100 V120"/><path class="p5" d="M455 160 V200"/>
+
+<!-- ESP32 -->
+<rect class="box" x="380" y="200" width="170" height="420" rx="8" style="fill:#e9f0fb"/>
+<text x="392" y="224" class="ttl">ESP32-S3 SuperMini</text>
+<g class="sm">
+<text x="392" y="250">5V   (from diode)</text>
+<text x="392" y="268">GND</text>
+<text x="392" y="286">3V3  (TTP223 VCC)</text>
+<text x="392" y="316">GPIO1  candle #1</text>
+<text x="392" y="334">GPIO2  candle #2</text>
+<text x="392" y="352">GPIO4  candle #3</text>
+<text x="392" y="370">GPIO5  candle #4</text>
+<text x="392" y="388">GPIO6  candle #5</text>
+<text x="392" y="406">GPIO7  candle #6</text>
+<text x="392" y="424">GPIO8  candle #7</text>
+<text x="392" y="442">GPIO9  candle #8</text>
+<text x="392" y="460">GPIO10 shamash</text>
+<text x="392" y="490">GPIO11 arms data</text>
+<text x="392" y="508">GPIO12 COB data</text>
+<text x="392" y="538">GPIO13 touch (TTP223)</text>
+<text x="392" y="556">GPIO44 (RX) button</text>
+<text x="392" y="590">USB-C on the board:</text>
+<text x="392" y="604">programming only</text>
+</g>
+<path class="gnd" d="M380 264 H230"/>
+
+<!-- data lines: direct from the GPIO (no level shifter) -->
+<text x="640" y="462" class="ttl">LED data - direct from GPIO</text>
+<text x="640" y="566" class="sm">330R as close as possible to the strip's first DIN</text>
+<path class="dat" d="M550 486 H880"/><rect class="box" x="880" y="476" width="50" height="20"/><text x="886" y="491" class="sm">330R</text>
+<path class="dat" d="M930 486 H1000"/><text x="940" y="480" class="lbld">ARMS DIN</text>
+<path class="dat" d="M550 504 H600 V540 H880"/><rect class="box" x="880" y="530" width="50" height="20"/><text x="886" y="545" class="sm">330R</text>
+<path class="dat" d="M930 540 H1000"/><text x="940" y="534" class="lbld">COB DIN</text>
+
+<!-- candle driver -->
+<rect class="box" x="640" y="200" width="250" height="190" rx="6"/>
+<text x="652" y="222" class="ttl">Candle driver  x9</text>
+<text x="652" y="240" class="sm">(8 candles + shamash, all identical)</text>
+<path class="sig" d="M550 312 H600 V300 H660"/>
+<rect class="box" x="660" y="290" width="40" height="20"/><text x="667" y="305" class="sm">1k</text>
+<path class="sig" d="M700 300 H740"/>
+<circle cx="760" cy="300" r="22" fill="#fff" stroke="#333"/>
+<text x="742" y="304" class="sm">NPN</text>
+<text x="700" y="344" class="sm">BC547 / 2N2222</text>
+<text x="790" y="272" class="sm">C</text><text x="790" y="336" class="sm">E</text>
+<path d="M770 282 V255 H840" stroke="#333" stroke-width="1.8" fill="none"/>
+<text x="845" y="259" class="sm">-> flame LED (-)</text>
+<path class="gnd" d="M770 318 V372 H640"/><text x="660" y="368" class="sm">E -> GND</text>
+<path class="p3" d="M860 420 V275"/><text x="866" y="300" class="sm">flame LED (+)</text><text x="866" y="314" class="sm">-> 3V3 rail</text>
+
+<!-- touch & button -->
+<rect class="box" x="250" y="660" width="140" height="70" rx="6"/>
+<text x="260" y="682" class="ttl">TTP223</text>
+<g class="sm"><text x="260" y="700">VCC->3V3 GND->GND</text><text x="260" y="716">I/O -> GPIO13</text></g>
+<path class="sig" d="M390 690 H560 V534 H550"/>
+<rect class="box" x="420" y="740" width="150" height="56" rx="6"/>
+<text x="430" y="762" class="ttl">12 mm button</text>
+<text x="430" y="780" class="sm">GPIO44 -> button -> GND</text>
+<path class="sig" d="M570 768 H600 V552 H550"/>
+
+<!-- strips -->
+<rect class="box" x="1000" y="140" width="220" height="330" rx="8" style="fill:#fdf6e8"/>
+<text x="1012" y="162" class="ttl">8 wave arms (2.7 mm)</text>
+<text x="1012" y="178" class="sm">in the cavity behind the ship</text>
+<g>
+<rect x="1018" y="250" width="12" height="150" fill="#bfe3ff" stroke="#333"/>
+<rect x="1042" y="250" width="12" height="150" fill="#bfe3ff" stroke="#333"/>
+<rect x="1066" y="250" width="12" height="150" fill="#bfe3ff" stroke="#333"/>
+<rect x="1090" y="250" width="12" height="150" fill="#bfe3ff" stroke="#333"/>
+<rect x="1130" y="250" width="12" height="150" fill="#bfe3ff" stroke="#333"/>
+<rect x="1154" y="250" width="12" height="150" fill="#bfe3ff" stroke="#333"/>
+<rect x="1178" y="250" width="12" height="150" fill="#bfe3ff" stroke="#333"/>
+<rect x="1202" y="250" width="12" height="150" fill="#bfe3ff" stroke="#333"/>
+</g>
+<g class="sm"><text x="1015" y="244">L4</text><text x="1039" y="244">L3</text><text x="1063" y="244">L2</text><text x="1087" y="244">L1</text>
+<text x="1127" y="244">R1</text><text x="1151" y="244">R2</text><text x="1175" y="244">R3</text><text x="1199" y="244">R4</text>
+<text x="1012" y="200">candle #8 ......... candle #1</text>
+<text x="1012" y="216">DIN bottom, DOUT top;</text>
+<text x="1012" y="230">thin wire back down to next DIN</text></g>
+<path class="dat" d="M1000 486 H1010 V412 H1024 V400"/>
+<path class="dat" stroke-dasharray="4 3" d="M1030 254 H1036 V406 H1048 V400"/>
+<text x="1012" y="440" class="sm">5V + GND to EVERY arm bottom</text>
+<text x="1012" y="456" class="sm">(power injection in the cavity)</text>
+
+<rect class="box" x="1000" y="580" width="220" height="150" rx="8" style="fill:#fdf6e8"/>
+<text x="1012" y="602" class="ttl">COB 5 mm chain</text>
+<g class="sm"><text x="1012" y="622">1. base window strip</text>
+<text x="1012" y="638">   (in the base, left -> right)</text>
+<text x="1012" y="656">2. its DOUT -> wire up to the</text>
+<text x="1012" y="672">   cavity -> mast DIN (bottom)</text>
+<text x="1012" y="690">5V+GND at the start of each strip</text></g>
+<path class="dat" d="M1000 540 H990 V650 H1000"/>
+
+<!-- cable -->
+<rect class="box" x="640" y="620" width="300" height="120" rx="6" style="fill:#eef7ee"/>
+<text x="652" y="642" class="ttl">Cable base -> cavity (through fan slot)</text>
+<g class="sm"><text x="652" y="662">2 x 22 AWG: 5V, GND</text>
+<text x="652" y="678">16-wire ribbon / thin wires: 3V3 rail,</text>
+<text x="652" y="694">9 x flame LED (-), arms data, mast data,</text>
+<text x="652" y="710">+ spares</text>
+<text x="652" y="728">Solder both flame wires BEFORE inserting the LED</text></g>
+</svg>
